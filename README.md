@@ -1,3 +1,112 @@
+# Manual de Uso
+
+## O que a extensão faz
+
+Ela lê os campos que você já preencheu no formulário e monta automaticamente um resumo no campo **Comentários**.
+
+Em vez de digitar à mão a data, o horário, a posição, os setores e o resto — você clica uma vez e o texto aparece pronto.
+
+---
+
+## Como usar
+
+**Um clique. Só isso.**
+
+1. Preencha o formulário normalmente.
+2. Clique no ícone da extensão, ao lado da barra de endereços.
+3. O resumo aparece no topo do campo **Comentários**.
+
+Não abre janela, não pede confirmação. O texto simplesmente aparece.
+
+> Se o ícone não estiver visível, clique na peça de quebra-cabeça 🧩 ao lado da barra de endereços e fixe a extensão com o alfinete 📌.
+
+---
+
+## O que é gerado
+
+Com um formulário preenchido assim:
+
+| Campo | Valor |
+|---|---|
+| Data | 16/07/2026 |
+| Hora de Início | 17:01 |
+| Posição | Controlador |
+| Setor | FCF, S1 |
+| Complexidade | Média |
+| Restrições Técnicas | Telefonia, Radar |
+| Condições Operacionais | Ativação de Espaço Aéreo Condicionado, Manobra/Exercício Militar |
+
+O campo **Comentários** recebe:
+
+```
+Data: 16/07/2026 - 17:01
+Posição: Controlador - Setores: FCF, S1 - Complexidade: Média
+Condições Operacionais: Ativação de Espaço Aéreo Condicionado, Manobra/Exercício Militar
+Restrições Técnicas: Telefonia, Radar
+```
+
+**Campos vazios são omitidos.** Se não houver restrições técnicas, aquela linha simplesmente não aparece — nada de "Restrições Técnicas: (vazio)" poluindo o texto.
+
+---
+
+## Seu texto não é apagado
+
+Este é o ponto mais importante.
+
+O resumo entra **acima** do que você escreveu. O que estava lá continua lá, embaixo:
+
+```
+Data: 16/07/2026 - 17:01
+Posição: Controlador - Setores: FCF, S1 - Complexidade: Média
+
+Tráfego intenso no período. Coordenação com [...] às 17:40.
+```
+
+### Clicou de novo depois de mudar um campo?
+
+Sem problema. A extensão **substitui apenas o resumo antigo** e mantém suas observações intactas.
+
+Fluxo típico:
+
+1. Preenche o formulário → clica no ícone → resumo aparece.
+2. Escreve suas observações abaixo do resumo.
+3. Percebe que errou o setor → corrige no formulário → **clica de novo**.
+4. O resumo é atualizado com o setor certo. Suas observações continuam ali, sem alteração.
+
+Pode clicar quantas vezes quiser. O resultado é sempre o mesmo: um resumo, atualizado, mais o seu texto.
+
+> **Detalhe técnico, para sua tranquilidade:** a extensão marca o início e o fim do bloco que ela mesma escreveu com caracteres invisíveis. É assim que ela sabe exatamente o que pode substituir e o que precisa preservar. Você não vê esses marcadores e não precisa se preocupar com eles.
+
+---
+
+## Se algo não funcionar
+
+### Cliquei e nada aconteceu
+
+Recarregue a página (**F5**) e tente de novo. É a solução para a grande maioria dos casos — especialmente logo depois de instalar ou atualizar a extensão.
+
+### Aparece só parte das informações
+
+Algum campo pode ter mudado de nome no sistema. Me avise [por e-mail](mailto:duduferrer7@gmail.com) — é um ajuste rápido.
+
+### O resumo saiu duplicado
+
+Não deveria acontecer. Se acontecer, apague o conteúdo do campo Comentários, digite suas observações de novo e clique no ícone uma vez. E reporte o caso.
+
+### O texto some quando clico fora do campo
+
+O formulário pode não ter registrado a alteração. Clique dentro do campo Comentários e digite um espaço — isso costuma forçar o sistema a reconhecer o texto. Se persistir, reporte.
+
+---
+
+## Limitações
+
+- **Funciona apenas na página do formulário do LPNA.** Em qualquer outro site, o ícone não faz nada.
+- **Não preenche o formulário por você.** Ela apenas lê o que já está preenchido e resume.
+- **Não salva nada.** Nem envia nada para lugar nenhum. Tudo acontece na sua tela, no seu navegador. A extensão não tem acesso à internet e não guarda histórico.
+- **Não substitui a conferência.** O resumo reflete o que está no formulário naquele instante. Se o formulário estiver errado, o resumo estará errado. Confira antes de enviar.
+
+
 # Instalação
 
 Extensão para Google Chrome. A instalação é manual — leva menos de dois minutos.
